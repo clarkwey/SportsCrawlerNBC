@@ -44,7 +44,7 @@ public class Writer{
       //plotPoints();
       if (whenToPrint == 10){
         //System.out.print("Current Date/Time: " + ft.format(new Date())+" : " + plotPoints.get(1).get(plotPoints.get(1).size()-1) + "\n");
-        System.out.println("Last Price: " + lastPrice);
+        //System.out.println("Last Price: " + lastPrice);
         //System.out.println(plotPoints.get(0).get(plotPoints.get(0).size()-1) + " " + plotPoints.get(2).get(plotPoints.get(2).size()-1));
         whenToPrint = 0;
       }
