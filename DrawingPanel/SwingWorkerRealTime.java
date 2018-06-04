@@ -177,7 +177,7 @@ private static ArrayList<ArrayList<Double>> plotPoints = new ArrayList<>(); //Re
         double distanceToTop = top - lastPrice;
         double distanceToBottom = lastPrice - bottom;
         double prevDistanceToTop = prevTop - lastPrice;
-        if(distanceToTop - prevDistanceToTop < 0 && distanceToTop > 5){
+        if(distanceToTop - prevDistanceToTop < -1 && distanceToTop > 5){
           HOLD = true; //If top band difference drops, sign that value is increasing.
           System.out.println("BUY: value increasing");
           System.out.println("Buying Price: $" + lastPrice);
@@ -197,17 +197,17 @@ private static ArrayList<ArrayList<Double>> plotPoints = new ArrayList<>(); //Re
         HOLD = false;
         System.out.println("SELL: Approaching top band");
         System.out.println("Selling Price: $" + lastPrice);
-        System.out.println("Profit: " + (buyingPrice - lastPrice));
+        System.out.println("Profit: " + (lastPrice - buyingPrice));
       }else if(lastPrice - buyingPrice >10 ){
         HOLD = false;
         System.out.println("SELL: Target profit");
         System.out.println("Selling Price: $"+lastPrice);
-        System.out.println("Profit: " + (buyingPrice - lastPrice));
+        System.out.println("Profit: " + (lastPrice - buyingPrice));
       }else if(buyingPrice - lastPrice > 10){
         HOLD = false;
         System.out.println("CUTOFF SELL");
         System.out.println("Selling Price: $"+lastPrice);
-        System.out.println("Loss: " + (buyingPrice - lastPrice));
+        System.out.println("Loss: " + (lastPrice - buyingPrice));
       }
     }
   }
